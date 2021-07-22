@@ -2,7 +2,7 @@
 affinity: {}
 
 image:
-  repository: directxman12/k8s-prometheus-adapter-amd64
+  repository: superedge.tencentcloudcr.com/superedge/k8s-prometheus-adapter
   tag: v0.8.4
   pullPolicy: IfNotPresent
 

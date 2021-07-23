@@ -12,7 +12,8 @@ metricsRelistInterval: 1m
 
 listenPort: 6443
 
-nodeSelector: {}
+nodeSelector:
+  node-role.kubernetes.io/master: ""
 
 priorityClassName: ""
 
@@ -154,7 +155,10 @@ extraVolumeMounts: []
   #     mountPath: /etc/ssl/certs/ca-certificates.crt
   #     readOnly: true
 
-tolerations: []
+tolerations:
+  - effect: NoSchedule
+    key: node-role.kubernetes.io/master
+    operator: Exists
 
 # Labels added to the pod
 podLabels: {}
